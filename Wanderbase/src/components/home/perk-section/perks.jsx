@@ -1,5 +1,9 @@
 import React from "react";
 import './perks.scss';
+import dataIcon from "../../../assets/icons/dataIcon.svg";
+import reviewIcon from "../../../assets/icons/reviewIcon.svg";
+import reviewImage from "../../../assets/images/review.jpg";
+import dataAnalyticsImage from "../../../assets/images/data-analytics.png";
 
 
 export default function Perks() {
@@ -7,23 +11,19 @@ export default function Perks() {
     const PerkList = () => {
         const perkList = [
         {
-            name: "Expert Review Analysis",
+            name: "Smart Support & Review Insight",
             audience: "User",
-            description: "Our site uses artificial intelligence to bring you the best and most accurate review ratings!",
-            icon: "review-icon"
+            description: "Get instant chat assistance and AI-powered review ratings to help you make confident travel decisions!",
+            icon: reviewIcon,
+            image: reviewImage
         },
         {
             name: "Top Quality Data Analytics",
             audience: "Business",
-            description: "From review ratings to your page views and time spent, you can rely on us to make informed decisions",
-            icon: "data-icon"
+            description: "We analyse real-time interactions, including views, ratings, and session duration, and present them as clear, actionable insights!",
+            icon: dataIcon,
+            image: dataAnalyticsImage
         },
-        {
-            name: "Instant Chat Advice",
-            audience: "User",
-            description: "Our site uses an instant chat advice center to help you with any queries you may have!",
-            icon: "chat-icon"
-        }
     ];
 
     const businessPerks = perkList.filter(perk => perk.audience == "Business");
@@ -33,11 +33,12 @@ export default function Perks() {
         <section>
             <div className='business'>
                 {businessPerks.map((perk, index) => (
-                    <div key={index} className="perk perk-container">
-                        <div className='perk-image'>
-                            <p> placeholder image </p>
+                    <div key={index} className="perk-container">
+                        <div className='perk-image data'>
+                            <img src={dataAnalyticsImage} />
                         </div>
                         <div className='perk-content'>
+                            <img src={perk.icon} />
                             <h2> {perk.name} </h2> 
                             <p> {perk.description} </p>
                         </div>
@@ -46,11 +47,12 @@ export default function Perks() {
             </div>
             <div className='user'>
                 {userPerks.map((perk, index) => (
-                    <div key={index} className="perk perk-container">
+                    <div key={index} className="perk-container">
                         <div className='perk-image'> 
-                            <p>placeholder image </p>
+                            <img src={reviewImage} />
                         </div>
                         <div className='perk-content'>
+                            <img src={perk.icon} />
                             <h2> {perk.name} </h2>
                             <p> {perk.description} </p>
                         </div>
