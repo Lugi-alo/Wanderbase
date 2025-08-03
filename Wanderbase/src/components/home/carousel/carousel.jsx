@@ -2,6 +2,10 @@ import React from "react";
 import {useState, useEffect} from 'react';
 import Slider from "react-slick";
 
+import './carousel.scss';
+import locationIcon from '../../../assets/icons/locationIcon.svg';
+
+
 export default function Carousel() {
 
     const HotelList = () => {
@@ -10,14 +14,14 @@ export default function Carousel() {
             id: 1,
             name: "Placeholder Hotel",
             image: "placeholder hotel image",
-            location: "placeholder location",
+            location: "Paris, France",
             rating: 4.9,
         },
         {
             id: 2,
             name: "Placeholder Villa",
             image: "placeholder villa image",
-            location: "placeholder location",
+            location: "Tokyo, Japan",
             rating: 4.7,
 
         },
@@ -25,7 +29,7 @@ export default function Carousel() {
             id: 3,
             name: "Placeholder BnB",
             image: "placeholder bnb image",
-            location: "placeholder location",
+            location: "New York, USA",
             rating: 4.5,
         },
     ];
@@ -38,7 +42,7 @@ export default function Carousel() {
                 const nextIndex = (prevIndex + 1) % hotelList.length;
                 return nextIndex;
             });
-        }, 4000);
+        }, 5000);
         
         return () => clearInterval(interval);
     }, [hotelList.length]);
@@ -55,8 +59,8 @@ export default function Carousel() {
         <div key={hotel.id} className={cardClass}>
             <p>{hotel.image}</p>
             <h2>{hotel.name}</h2>
-            <p>{hotel.location}</p>
-            <p>{hotel.rating}</p>
+            <p> <img src={locationIcon} /> {hotel.location}</p>
+            <p className="rating">{hotel.rating}</p>
         </div>
             );
         })}
