@@ -6,8 +6,10 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.7.1",
+    "react-slick": "^0.30.3",
     "sass": "^1.89.2",
-    "scheduler": "^0.26.0"
+    "scheduler": "^0.26.0",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "dev": "vite",
