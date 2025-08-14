@@ -1,3 +1,19 @@
+#Laravel core
+/Wanderbase/backend/vendor/
+.phpunit.result.cache
+.phpunit.cache/
+
+#SQLite database
+/Wanderbase/backend/database/*.sqlite
+
+#Laravel Storage
+/Wanderbase/backend/storage/
+storage/*.key
+storage/*.log
+storage/framework/*
+storage/log/*
+storage/app/public/*
+
 # Node dependencies
 node_modules/
 
@@ -13,7 +29,7 @@ yarn-debug.log*
 pnpm-debug.log*
 
 # Environment variables
-.env
+/Wanderbase/backend.env
 .env.*.local
 
 # Editor settings
@@ -23,11 +39,3 @@ pnpm-debug.log*
 # OS-specific files
 .DS_Store
 Thumbs.db
-
-# Optional: testing and coverage
-coverage/
-*.tgz
-
-# Optional: system swap or temp files
-*.swp
-*.swo
